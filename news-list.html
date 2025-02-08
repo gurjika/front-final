@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News List</title>
+    <link rel="stylesheet" href="./css/news-list.css">
+</head>
+<body>
+    <h1>News List</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Likes</th>
+                <th>Date Updated</th>
+                <th>Date Created</th>
+                <th>                     
+                    <button class="btn btn-create" onclick="window.location.href='add-to-list.html'">Create</button>
+                </th>
+            </tr>
+        </thead>
+        <tbody id="news-list">
+            <tr>
+                <td>1</td>
+                <td>Local Hero Saves Family from Burning Building</td>
+                <td>Politics</td>
+                <td>5</td>
+                <td>Dec 5</td>
+                <td>Dec 5</td>
+                <td>
+                    <button class="btn btn-delete">Delete</button>
+                    <button class="btn btn-update">Update</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+    <script src="./js/news-list.js">
+
+    </script>
+</body>
+
+
+</html>

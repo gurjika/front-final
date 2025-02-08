@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+}
+h1 {
+    font-size: 28px;
+}
+form {
+    max-width: 600px;
+}
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.row {
+    display: flex;
+    gap: 30px;
+}
+.row input {
+    flex: 1;
+}
+.buttons {
+    margin-top: 20px;
+}
+.btn {
+    padding: 8px 40px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border-radius: 8px;
+    border: solid;
+    border-width: 1px;
+    border-color: gray;
+    cursor: pointer;
+}
+
+
+.btn-cancel {
+    background-color: #ccc;
+}
+.btn-save {
+    background-color: #4CAF50;
+    color: white;
+}
