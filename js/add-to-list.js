@@ -9,6 +9,7 @@ if (newsId) {
     fetchNews(newsId);
 }
 
+
 async function fetchNews(id) {
     try {
         const response = await fetch(`${apiUrl}/${id}`);
@@ -22,6 +23,7 @@ async function fetchNews(id) {
         console.error("Error fetching news:", error);
     }
 }
+
 
 form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -50,6 +52,7 @@ form.addEventListener("submit", async (event) => {
             newsData.dateUpdated = currentDateFormatted;
 
             response = await fetch(`${apiUrl}/${newsId}`, {
+                // PUT რექვესთის მაგივრად ვაგზავნი PATCH რექვესთს რომ არ შეიცვალოს ობიექტის DATE CREATED
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newsData),
