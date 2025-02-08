@@ -3,6 +3,7 @@ const form = document.getElementById("news-form");
 const urlParams = new URLSearchParams(window.location.search);
 const newsId = urlParams.get("id");
 
+
 if (newsId) {
     document.getElementById("form-title").innerText = "Update News";
     fetchNews(newsId);
@@ -36,16 +37,27 @@ form.addEventListener("submit", async (event) => {
     }
 
     const newsData = { title, description, category, editorFirstName, editorLastName };
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() + 1;
+    const day = currentDate.getDate();
 
+    const currentDateFormatted = `${month}/${day}/${year}`;
     try {
+
         let response;
         if (newsId) {
+            newsData.dateUpdated = currentDateFormatted;
+
             response = await fetch(`${apiUrl}/${newsId}`, {
-                method: "PUT",
+                method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newsData),
             });
+
+
         } else {
+            newsData.currentDate = currentDateFormatted;
             response = await fetch(apiUrl, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
